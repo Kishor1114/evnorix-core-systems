@@ -43,8 +43,9 @@ const AnyLink = Link as unknown as (props: Record<string, unknown>) => ReactNode
 
 export function CtaLink({ to, params, hash, children, className, variant, size, arrow = true }: CtaProps) {
   const linkProps: Record<string, unknown> = { to };
-  if (params) linkProps.params = params;
-  if (hash) linkProps.hash = hash;
+  if (params) linkProps["params"] = params;
+  if (hash) linkProps["hash"] = hash;
+
   return (
     <AnyLink {...linkProps} className={cn(ctaVariants({ variant, size }), className)}>
       <span>{children}</span>
