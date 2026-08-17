@@ -37,14 +37,16 @@ type CtaProps = VariantProps<typeof ctaVariants> & {
   children: ReactNode;
   className?: string;
   arrow?: boolean;
+  onClick?: () => void;
 };
 
 const AnyLink = Link as unknown as (props: Record<string, unknown>) => ReactNode;
 
-export function CtaLink({ to, params, hash, children, className, variant, size, arrow = true }: CtaProps) {
+export function CtaLink({ to, params, hash, children, className, variant, size, arrow = true, onClick }: CtaProps) {
   const linkProps: Record<string, unknown> = { to };
   if (params) linkProps["params"] = params;
   if (hash) linkProps["hash"] = hash;
+  if (onClick) linkProps["onClick"] = onClick;
 
   return (
     <AnyLink {...linkProps} className={cn(ctaVariants({ variant, size }), className)}>
