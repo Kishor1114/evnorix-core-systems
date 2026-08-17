@@ -127,7 +127,7 @@ export function Header() {
         aria-modal="true"
         aria-label="Site navigation"
         className={cn(
-          "fixed inset-0 z-[100] flex flex-col bg-background transition-opacity duration-250 lg:hidden",
+          "fixed inset-0 z-[100] flex flex-col bg-background transition-opacity duration-300 lg:hidden",
           open ? "visible opacity-100" : "pointer-events-none invisible opacity-0",
         )}
         style={{ backgroundColor: "var(--background)" }}
